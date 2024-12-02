@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les reserves a Portugal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("imgfondo.jpg");
+            background-color: #ffca7620;
+            background-size: 100vw;
+            background-repeat: no-repeat;
+        }
+        h1, h2 {
+            margin: auto;
+            padding: 20px;
+            width: 60%;
+            color: #822600;
+        }
+        h2 {
+            color: #fa8c00;
+        }
+        .scrollyteller-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .scrollyteller-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .scrollyteller-text_titol, .scrollyteller-text {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            font-size: 1.3em;
+            color: #555555;
+            position: relative; /* Necesario para el z-index */
+            z-index: 2; /* Asegura que esté por encima del iframe */
+            background-color: rgba(255, 255, 255, 0.7); /* Opcional: agrega un fondo semitransparente para mejorar la legibilidad */
+            padding: 20px;
+            border-radius: 10px; /* Opcional: para un diseño más amigable */
+        }
+        .scrollyteller-text_titol {
+            background-color: transparent;
+        }
+        .scrollyteller-visual {
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            min-height: 70vh;
+            max-height: 100vh;
+            border: none;
+            visibility: hidden; /* El gráfico comienza oculto */
+            transition: visibility 0s, opacity 0.5s ease-in-out;
+            opacity: 0; /* Efecto de desvanecimiento */
+        }
+        .visible {
+            visibility: visible;
+            opacity: 1;
+        }
+        .logouoc{
+            width: 20%;
+        }
+
+        .text-petit {
+            font-size: 0.7em;
+            margin: 10px;
+        }
+
+        #go-to {
+
+        }
+        #go-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            opacity: 0; /* Oculto por defecto */
+            pointer-events: none; /* Evita interacción cuando está oculto */
+            transition: opacity 0.3s ease-in-out; /* Transición suave */
+        }
+        #go-to-step-2{
+            margin: auto;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            opacity: 0; /* Oculto por defecto */
+            transition: opacity 0.3s ease-in-out; /* Transición suave */
+            opacity: 1 !important;
+        }
+        #go-to-step-2:hover, #go-to-top:hover {
+            background-color: rgba(255, 200, 0, 0.5);
+        }
+
+        #go-to-step-2 svg, #go-to-top svg {
+            fill: #555555; /* Color del icono */
+            transition: fill 0.3s ease-in-out;
+        }
+
+        #go-to-step-2:hover svg, #go-to-top:hover svg {
+            fill: #822600;
+        }
+
+        #go-to-top.visible {
+            opacity: 1; /* Visible cuando se añade la clase */
+            pointer-events: auto; /* Habilita interacción */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="scrollyteller-container">
+    <div class="scrollyteller-section" id="step-1">
+        <div class="scrollyteller-text_titol">
+            <h1>Benvingut a la història de les reserves a Portugal</h1>
+            <h2>Un gran viatge de Juliol de 2015 fins Agost de 2017</h2>
+            <p>Boobking va enregistrar les següents reserves a nivell mundial</p>
+            <div id="go-to-step-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20px" style="cursor: pointer;"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+            </div>
+        </div>
+    </div>
+    <div class="scrollyteller-section" id="step-2">
+        <div class="scrollyteller-text">
+            <h2>Reserves per països</h2>
+            <p>Pots explorar el mapa per visualitzar totes les reserves realitzades per persones de cada país i veure més detalls</p>
+        </div>
+    </div>
+    <div class="scrollyteller-section" id="step-3">
+        <div class="scrollyteller-text">
+            <h2>Reserves i cancel·lacions</h2>
+            <p>Quantes reserves i cancel·lacions van haver en cadascun dels mesos?</p>
+            <p>Situat a sobre de cada punt en les línies podràs veure quantes reserves i cancel·lacions van existir</p>
+        </div>
+    </div>
+    <div class="scrollyteller-section" id="step-4">
+        <div class="scrollyteller-text">
+            <h2>Països amb més reserves i les seves cancel·lacions</h2>
+            <p>Portugal va ser el país que va fer més reserves</p>
+            <p>Però també es cert que va ser el país amb un percentatge de cancel·lacions més alt</p>
+            <p>Passeja't per les barres per veure-ho amb més detall</p>
+        </div>
+    </div>
+    <div class="scrollyteller-section" id="step-5">
+        <div class="scrollyteller-text">
+            <h2>Mitjana de nits per estança</h2>
+            <p>Després de descartar Portugal de les dades, aquí pots veure la mitjana de nits dels nostres viatgers, pels 10 països amb més reserves</p>
+        </div>
+    </div>
+    <div class="scrollyteller-section" id="step-6">
+        <div class="scrollyteller-text">
+            <h2>Fins al proper viatge</h2>
+            <p>Julià Moreno Alonso</p>
+            <p class="text-petit">Visualització de Dades</p>
+            <p class="text-petit">Màster en Ciència de Dades</p>
+            <p><img class="logouoc" src="logouoc.jpg"></p>
+        </div>
+    </div>
+</div>
+
+<iframe id="visual" class="scrollyteller-visual" src="" title="Visual Storytelling"></iframe>
+
+<div id="go-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20px"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+</div>
+
+<script src="https://unpkg.com/scrollama"></script>
+<script>
+    // Configurar la biblioteca Scrollama
+    const scroller = scrollama();
+
+    // Asignar gráficos a cada sección
+    const graphs = {
+        "step-1": "",
+        "step-2": "https://datawrapper.dwcdn.net/xMWGA/13/", // Mapa
+        "step-3": "https://datawrapper.dwcdn.net/B5XRg/3/",  // Línies
+        "step-4": "https://datawrapper.dwcdn.net/Y1kiN/3/",  // Barres
+        "step-5": "https://datawrapper.dwcdn.net/EDeOi/5/",   // Lollipop plot
+        "step-6": ""
+    };
+
+    // Selecciona la flecha y el paso al que quieres desplazarte
+    const arrow = document.getElementById("go-to-step-2");
+    const step2 = document.getElementById("step-2");
+    const goToTop = document.getElementById("go-to-top");
+
+    // Inicializar el visual inicial
+    const visualElement = document.getElementById("visual");
+
+    // Configurar eventos
+    scroller
+        .setup({
+            step: ".scrollyteller-section",
+            offset: 0.5, // Punto medio del viewport
+            debug: false
+        })
+        .onStepEnter(({ element }) => {
+            // Cambiar gráfico al entrar en la sección
+            const id = element.id;
+
+            if (id === "step-1") {
+                // Ocultar gráfico
+                visualElement.classList.remove("visible");
+                visualElement.src = ""; // Limpiar el src
+            } else {
+                // Mostrar gráfico y cambiarlo
+                visualElement.classList.add("visible");
+                visualElement.src = graphs[id];
+            }
+        })
+
+    // Recalcular en caso de cambio de tamaño de ventana
+    window.addEventListener("resize", scroller.resize);
+
+    // Función para el desplazamiento suave
+    arrow.addEventListener("click", () => {
+        step2.scrollIntoView({
+            behavior: "smooth", // Desplazamiento suave
+            block: "center"     // Alineación del elemento en el centro del viewport
+        });
+    });
+
+    goToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0, // Ir al inicio de la página
+            behavior: "smooth" // Desplazamiento suave
+        });
+    });
+
+    // Mostrar la flecha cuando se desplaza hacia abajo
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) { // Cambia 300 por el valor que prefieras
+            goToTop.classList.add("visible");
+        } else {
+            goToTop.classList.remove("visible");
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("imgfondo.jpg");
+    background-color: #ffca7620;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+}
+h1, h2 {
+    margin: auto;
+    padding: 20px;
+    width: 60%;
+    color: #822600;
+}
+h2 {
+    color: #fa8c00;
+}
+.scrollyteller-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.scrollyteller-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scrollyteller-text_titol, .scrollyteller-text {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.3em;
+    color: #555555;
+    position: relative; /* Necesario para el z-index */
+    z-index: 2; /* Asegura que esté por encima del iframe */
+    background-color: rgba(255, 255, 255, 0.7); /* Opcional: agrega un fondo semitransparente para mejorar la legibilidad */
+    padding: 20px;
+    border-radius: 10px; /* Opcional: para un diseño más amigable */
+}
+.scrollyteller-text_titol {
+    background-color: transparent;
+}
+.scrollyteller-visual {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    min-height: 70vh;
+    max-height: 100vh;
+    border: none;
+    visibility: hidden; /* El gráfico comienza oculto */
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    opacity: 0; /* Efecto de desvanecimiento */
+}
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+.logouoc{
+    width: 20%;
+}
+
+.text-petit {
+    font-size: 0.7em;
+    margin: 10px;
+}
+
+#go-to {
+
+}
+#go-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    opacity: 0; /* Oculto por defecto */
+    pointer-events: none; /* Evita interacción cuando está oculto */
+    transition: opacity 0.3s ease-in-out; /* Transición suave */
+}
+#go-to-step-2{
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease-in-out; /* Transición suave */
+    opacity: 1 !important;
+}
+#go-to-step-2:hover, #go-to-top:hover {
+    background-color: rgba(255, 200, 0, 0.5);
+}
+
+#go-to-step-2 svg, #go-to-top svg {
+    fill: #555555; /* Color del icono */
+    transition: fill 0.3s ease-in-out;
+}
+
+#go-to-step-2:hover svg, #go-to-top:hover svg {
+    fill: #822600;
+}
+
+#go-to-top.visible {
+    opacity: 1; /* Visible cuando se añade la clase */
+    pointer-events: auto; /* Habilita interacción */
+}
