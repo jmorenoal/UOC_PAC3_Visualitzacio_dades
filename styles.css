@@ -40,9 +40,11 @@ h2 {
     background-color: rgba(255, 255, 255, 0.7); /* Opcional: agrega un fondo semitransparente para mejorar la legibilidad */
     padding: 20px;
     border-radius: 10px; /* Opcional: para un diseño más amigable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para mejor visibilidad */
 }
 .scrollyteller-text_titol {
     background-color: transparent;
+    box-shadow: none;
 }
 .scrollyteller-visual {
     position: fixed;
@@ -123,4 +125,34 @@ h2 {
 #go-to-top.visible {
     opacity: 1; /* Visible cuando se añade la clase */
     pointer-events: auto; /* Habilita interacción */
+}
+
+.highlight-circle {
+    position: absolute;
+    top: 40%; /* Ajusta según la posición que desees */
+    left: 10%; /* Ajusta la distancia del borde izquierdo */
+    width: 250px; /* Tamaño del círculo */
+    height: 250px;
+    background-color: rgba(250, 140, 0, 0.7); /* Fondo semitransparente */
+    border-radius: 50%; /* Hace que sea un círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para mejor visibilidad */
+    z-index: 3; /* Asegura que esté encima del resto */
+    pointer-events: none; /* No interactúa cuando está oculto */
+    transition: opacity 0.5s ease-in-out; /* Transición suave */
+}
+
+.highlight-circle p {
+    color: white; /* Color del texto */
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.4; /* Espaciado entre líneas */
+}
+
+.highlight-circle-2 {
+    top: 80%;
+    left: 80%;
 }
